@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim>
+
+    <description>Mil-Mi-2 Hoplite (YASIM) - ALPHA</description>
+    <long-description>The Mil Mi-2 (NATO reporting name Hoplite) is a small, lightly armed turbine-powered transport helicopter that could also provide close air support when armed with 57 mm rockets and a 23 mm cannon.The Mi-2 was first introduced into the Soviet Air Force in 1965. The Mi-2 is used by mainly former Soviet and Eastern Bloc countries, although it was also purchased by Mexico and Myanmar armed forces. Most of the armed Mi-2 variants were used by Poland. Some were also used by the former East Germany (with machine gun and unguided rocket armament only). North Korea still maintains a large active fleet of Mi-2s</long-description>
+    <author>Kaito, RenanMsV, manilov.ap (3D), BARANGER Emmanuel (Systems), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">Mil-Mi-2</aero>
+    
+    <rating>
+      <FDM type="int">1</FDM>
+      <systems type="int">0</systems>
+      <cockpit type="int">0</cockpit>
+      <model type="int">2</model>
+    </rating>
+
+    <tags>
+      <tag>helicopter</tag>
+      <tag>fighter</tag>
+      <tag>cargo</tag>
+      <tag>1960s</tag>
+      <tag>fixed-gear</tag>
+      <tag>tricycle</tag>
+      <tag>coldwar</tag>
+      <tag>2-engine</tag>
+    </tags>
+
+    <sound>
+      <path>Aircraft/Mil-Mi-2/Sounds/sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Mil-Mi-2/Models/Mil-Mi-2.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <Mi2>
+        <state type="int">0</state>
+        <engine type="float">0.0</engine>
+        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+        <reflection-enabled type="bool" userarchive="y">true</reflection-enabled>
+      </Mi2>
+    </model>
+
+    <startup>
+      <splash-texture>Aircraft/Mil-Mi-2/Splashes/splash.png</splash-texture>
+    </startup>
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashes/splash.png</path>
+      </preview>
+    </previews>
+
+    <menubar include="Dialogs/Mil-Mi-2-menu.xml"/>
+
+    <view n="0">
+      <internal archive="y">true</internal>
+      <config>
+        <pitch-offset-deg>2.5</pitch-offset-deg>
+        <x-offset-m archive="y">-0.29</x-offset-m> <!-- right/left -->
+        <y-offset-m archive="y">-0.129</y-offset-m> <!-- up/down -->
+        <z-offset-m archive="y">-3.245</z-offset-m> <!-- aft/fore -->
+      </config>
+    </view>
+
+    <help>
+      <title>Mil-Mi-2 - background and help</title>
+      <line></line>
+      <key>
+        <name>{</name>
+        <desc>Start engines</desc>
+      </key>
+      <key>
+        <name>}</name>
+        <desc>Shutdown engines</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Close pilot door</desc>
+      </key>
+      <key>
+        <name>R</name>
+        <desc>Toggle rotor brake</desc>
+      </key>
+      <key>
+        <name>r</name>
+        <desc>Apply rotor brake</desc>
+      </key>
+      <key>
+        <name>Ctrl d</name>
+        <desc>Toggle S.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl e</name>
+        <desc>Toggle C.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl f</name>
+        <desc>Auto hover</desc>
+      </key>
+    </help>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>200</max-lb>
+      <min-lb>130</min-lb>
+    </weight>
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>200</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
+  </sim>
+
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+        <throttle>1.0</throttle>
+        <clutch type="bool">0</clutch>
+        <clutchguard type="bool">0</clutchguard>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <engine-throttle type="double">1.0</engine-throttle>
+      <brake>0</brake>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+    <flight>
+      <aileron-trim>0</aileron-trim>
+      <elevator-trim>0</elevator-trim>
+    </flight>
+  </controls>
+
+  <engines>
+    <engine>
+      <rpm type="double">0</rpm>
+      <running type="bool">false</running>
+      <clutch-engaged type="bool">false</clutch-engaged>
+    </engine>
+  </engines>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <instrumentation>
+    <gsdi>
+      <serviceable type="bool">true</serviceable>
+      <enabled type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <input>
+    <keyboard include="Nasal/Mi2-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <Mi2>
+      <file>Aircraft/Mil-Mi-2/Nasal/Mi2.nas</file>
+      <file>Aircraft/Mil-Mi-2/Nasal/electrical.nas</file>
+      <file>Aircraft/Mil-Mi-2/Nasal/fcs-management.nas</file>
+      <file>Aircraft/Mil-Mi-2/Nasal/generic-helicopter-fcs.nas</file>
+    </Mi2>
+  </nasal>
+
+</PropertyList>
