@@ -49,12 +49,18 @@
 
     <startup>
       <splash-texture>Aircraft/Mil-Mi-2/Splashes/splash.png</splash-texture>
+      <splash-texture>Aircraft/Mil-Mi-2/Splashes/splash02.jpg</splash-texture>
     </startup>
     <previews>
       <preview>
         <type>exterior</type>
         <splash type="bool">true</splash>
         <path>Splashes/splash.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashes/splash02.jpg</path>
       </preview>
     </previews>
 
