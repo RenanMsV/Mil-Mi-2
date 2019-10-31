@@ -8,4 +8,4 @@
 - Using some files from [Davepack](https://github.com/FGMEMBERS-NONGPL/DavePack) 
 
 
-![Mi-2](https://upload.wikimedia.org/wikipedia/commons/7/70/Mil_Mi-2_side-view_silhouette.png)
+![Mi-2](http://www.milpower.org/img/a_class/Mi2.gif)
